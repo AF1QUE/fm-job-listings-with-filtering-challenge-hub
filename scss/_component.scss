@@ -5,6 +5,13 @@
   border-left: 5px solid $white;
   padding: 32px 40px;
   @include flex(row, flex-start, center, wrap);
+  @include media(">=phone", "<tablet") {
+    padding: 24px;
+  }
+
+  &--featured {
+    border-left: 5px solid $cyan;
+  }
 
   &__logo {
     margin-right: 24px;
@@ -14,7 +21,7 @@
     @include media(">=phone", "<tablet") {
       width: 48px;
       height: 48px;
-      margin-top: -60px;
+      margin-top: -48px;
       margin-bottom: 8px;
       position: relative;
       z-index: 99;
@@ -102,6 +109,40 @@
   }
 }
 
-.job--featured {
-  border-left: 5px solid $cyan;
+.filter {
+  @include flex(row, center, center, nowrap);
+
+  &__title {
+    font-family: "Spartan", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+
+    cursor: pointer;
+    padding: 4px 8px;
+    color: $cyan;
+    background-color: $ligthCyan;
+    transition: all 0.5s ease;
+    border: 0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &__remove {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    @include flex(row, center, center, nowrap);
+    background-color: $cyan;
+    align-self: stretch;
+    padding: 9px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    &:hover {
+      background-color: $veryDarkCyan;
+    }
+  }
 }
+
+

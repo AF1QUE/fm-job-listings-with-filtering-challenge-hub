@@ -7,10 +7,10 @@
 }
 
 .container {
-  width: 1110px;
+  max-width: 1110px;
 
   @include media(">=phone", "<tablet") {
-    width: 350px;
+    max-width: 350px;
   }
   margin: 0px auto;
 }
