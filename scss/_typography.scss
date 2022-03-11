@@ -2,5 +2,52 @@ body {
   font-family: "Spartan", sans-serif;
 }
 
+.job__content__company {
+  font-size: 14px;
+  font-weight: 700;
+  color: $cyan;
 
+  @include media(">=phone", "<tablet") {
+    font-size: 13px;
+  }
+}
 
+.job__content__status {
+  color: $white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.08px;
+  line-height: 14px;
+}
+
+.job__content__title {
+  color: $veryDarkCyan;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+
+  @include media(">=phone", "<tablet") {
+    font-size: 15px;
+  }
+}
+
+.job__content__meta .meta {
+  font-size: 15px;
+  font-weight: 500;
+  color: $darkCyan;
+  letter-spacing: -0.12px;
+  line-height: 24px;
+
+  @include media(">=phone", "<tablet") {
+    font-size: 13px;
+    letter-spacing: -0.1px;
+  }
+}
+
+.job__tags .tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+  line-height: 24px;
+}
