@@ -12,11 +12,6 @@ header {
 .jobs {
 }
 
-.filters {
-  @include flex(row, flex-start, center, wrap);
-  gap: 16px;
-}
-
 .filter-bar {
   margin-top: -36px;
   min-height: 72px;
@@ -33,6 +28,11 @@ header {
   &--hidden {
     visibility: hidden;
   }
+}
+
+.filters {
+  @include flex(row, flex-start, center, wrap);
+  gap: 16px;
 }
 
 .clear-btn {
