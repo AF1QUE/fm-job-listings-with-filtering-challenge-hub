@@ -5,3 +5,16 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+.container {
+  width: 1110px;
+
+  @include media(">=phone", "<tablet") {
+    width: 350px;
+  }
+  margin: 0px auto;
+}
+
+span {
+  display: inline-block;
+}

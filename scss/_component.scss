@@ -1,0 +1,107 @@
+.job {
+  background: #ffffff;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  border-radius: 5px;
+  border-left: 5px solid $white;
+  padding: 32px 40px;
+  @include flex(row, flex-start, center, wrap);
+
+  &__logo {
+    margin-right: 24px;
+    height: 88px;
+    width: 88px;
+
+    @include media(">=phone", "<tablet") {
+      width: 48px;
+      height: 48px;
+      margin-top: -60px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 99;
+    }
+  }
+
+  &__content__company {
+    display: inline;
+    margin-right: 16px;
+  }
+
+  &__content__status {
+    display: inline;
+  }
+
+  &__content__status .status {
+    margin-right: 8px;
+  }
+
+  &__content__status .status--featured {
+    background-color: $veryDarkCyan;
+    padding: 6px 8px 4px 8px;
+    border-radius: 50px;
+  }
+
+  &__content__status .status--new {
+    background-color: $cyan;
+    padding: 6px 8px 4px 8px;
+    border-radius: 50px;
+  }
+
+  &__content__title {
+    margin: 8px 0px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  &__content__meta {
+  }
+
+  &__content__meta .meta:nth-child(even) {
+    &::after {
+      content: "•";
+      color: $darkCyan;
+      margin: 0px 16px;
+    }
+    &::before {
+      content: "•";
+      color: $darkCyan;
+      margin: 0px 16px;
+    }
+  }
+
+  &__tags {
+    margin-left: auto;
+    @include flex(row, flex-start, flex-start, wrap);
+    gap: 0px 16px;
+
+    @include media(">=phone", "<tablet") {
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 1px solid #b7c4c4;
+      gap: 16px 16px;
+    }
+  }
+
+  &__tags .tag {
+    cursor: pointer;
+    padding: 4px 8px;
+    color: $cyan;
+    background-color: $ligthCyan;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+  }
+
+  &__tags .tag:hover {
+    padding: 4px 8px;
+    color: $white;
+    background-color: $cyan;
+    border-radius: 4px;
+  }
+}
+
+.job--featured {
+  border-left: 5px solid $cyan;
+}
