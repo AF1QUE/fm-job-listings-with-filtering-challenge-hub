@@ -89,6 +89,7 @@ body {
   border-radius: 5px;
   border-left: 5px solid #ffffff;
   padding: 32px 40px;
+  margin-bottom: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
