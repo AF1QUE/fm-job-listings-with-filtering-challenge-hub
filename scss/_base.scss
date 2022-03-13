@@ -8,9 +8,11 @@
 
 .container {
   max-width: 1110px;
+  padding-bottom: 80px;
 
   @include media(">=phone", "<tablet") {
     max-width: 350px;
+    padding-bottom: 0px;
   }
   margin: 0px auto;
 }
