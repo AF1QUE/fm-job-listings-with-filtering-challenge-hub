@@ -41,6 +41,7 @@ function getJobStatus(job) {
 
 const jobsData = axios.get("../data.json").then((response) => {
   let jobHTML = "";
+
   response.data.map((job) => {
     let jobTags = getJobTags(job);
     let jobMeta = getJobMeta(job);
@@ -63,6 +64,8 @@ const jobsData = axios.get("../data.json").then((response) => {
 
 // Filter Part
 
+let activeFilters = [];
+
 window.addEventListener("load", () => {
   const tags = document.querySelectorAll(".tag");
   tags.forEach((tag) => {
@@ -73,8 +76,6 @@ window.addEventListener("load", () => {
   });
 });
 
-let activeFilters = [];
-
 function addFilters(tagName) {
   if (!activeFilters.includes(tagName)) {
     activeFilters.push(tagName);
@@ -83,21 +84,43 @@ function addFilters(tagName) {
   showFilters(activeFilters);
 }
 
+function removeFilter(id) {
+  let indexOfID = activeFilters.indexOf(id);
+  if (indexOfID !== -1) {
+    activeFilters.splice(indexOfID, 1);
+  }
+
+  showFilters(activeFilters);
+}
+
 function showFilters(filters) {
   let filtersHTML = "";
+
   filters.forEach((filter) => {
-    filtersHTML += ` <div class="filter">
-        <button class="filter__title" data-id="${filter}">${filter}</button>
+    filtersHTML += ` <div class="filter" data-id="${filter}">
+        <button class="filter__title">${filter}</button>
         <div class="filter__remove"><img src="/images/icon-remove.svg" alt="remove button"></div>
       </div>`;
   });
 
   filterGroup.innerHTML = filtersHTML;
+
+  const removeBtn = document.querySelectorAll(".filter__remove");
+  removeBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      removeFilter(e.currentTarget.parentElement.dataset.id);
+    });
+  });
 }
 
-// const removeBtn = document.querySelectorAll("filter__remove");
-// removeBtn.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     console.log("its working");
+// function checkFilter() {
+//   const tags = document.querySelectorAll(".tag");
+
+//   activeFilters.forEach((filter) => {
+//     tags.forEach((tag) => {
+//       if (filter !== tag.parentElement.parentElement.dataset.id) {
+//         tag.parentElement.parentElement.classList.add("job--hidden");
+//       }
+//     });
 //   });
-// });
+// }

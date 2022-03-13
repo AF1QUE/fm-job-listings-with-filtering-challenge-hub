@@ -120,6 +120,10 @@ body {
   border-left: 5px solid #5ba4a4;
 }
 
+.job--hidden {
+  display: none;
+}
+
 .job__logo {
   margin-right: 24px;
   height: 88px;

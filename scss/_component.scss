@@ -16,6 +16,10 @@
     border-left: 5px solid $cyan;
   }
 
+  &--hidden {
+    display: none;
+  }
+
   &__logo {
     margin-right: 24px;
     height: 88px;
